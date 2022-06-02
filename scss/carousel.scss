@@ -1,0 +1,98 @@
+@import "./variables";
+
+.carousel {
+width: 100%;
+background-color: $mainBeige;
+padding-bottom: 50px;
+
+
+@include desktop() {
+  padding-bottom: 0;
+}
+
+  &__wrapper {
+    max-width: $maxWidth;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+   
+    @include tablet() {
+      flex-direction: row;
+      max-height: 550px;
+    }
+  }
+
+  &__image {
+    width: 65%;
+
+    @include desktop() {
+      transform: translateY(30px);
+      width: 45%;
+     }
+  }
+
+  &__description {
+    width: 65%;
+    padding-right: 30px;
+    text-align: center;
+
+    @include tablet() {
+      margin-left: 70px;
+      text-align: left;
+     }
+
+    @include desktop() {
+      width: 35%;
+      margin-left: 0;
+     }
+
+    h2 {
+      font-size: 32px;
+      margin: 20px 0;
+      font-weight: 700;
+
+    @include desktop() {
+      font-size: 56px;
+      
+     }
+    }
+  }
+
+  .swiper {
+    max-width: $maxWidth;
+    width: 100%;
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    min-height: 55px;
+    min-width: 55px;
+    
+    &::after {
+      display: none;
+    }
+  
+    &::before {
+      align-items: center;
+      background-color: black;
+      color: $mainGrey;
+      content: "\f061";
+      display: flex;
+      font-family: "Font Awesome 5 Free";
+      font-size: 30px;
+      font-weight: 900;
+      height: 55px;
+      justify-content: center;
+      padding: 0 15px;
+      transform: translateX(10px);
+      width: 55px;
+      color: white;
+    }
+  }
+  
+  .swiper-button-prev::before {
+    transform: rotate(180deg) translateX(10px);
+  }
+}

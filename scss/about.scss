@@ -1,0 +1,39 @@
+@import "./variables";
+
+.about {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 0 auto 40px;
+  max-width: $maxWidth;
+
+  @include mobilePadding();
+
+  @include desktop() {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 80px;
+  }
+
+  &__card {
+    align-items: center;
+    color: $mainGrey;
+    border: 2px solid #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+
+    img {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+    
+    h3 {
+      font-size: 24px;
+      padding: 20px 0;
+      font-weight: 400;
+    }
+  }
+}

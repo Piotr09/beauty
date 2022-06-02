@@ -1,0 +1,99 @@
+@import "./variables";
+
+.header {
+  align-items: center;
+  background-color: $mainBeige;
+
+  .fas {
+    position: absolute;
+    top: 10px;
+  }
+
+  &__wrapper{
+    max-width: $maxWidth;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    height: 85px;
+  }
+
+  &__logo {
+    width: 120px;
+    @include mobilePadding()
+  }
+
+  &__burger {
+    background: none;
+    border: none;
+    color: $mainGrey;
+    cursor: pointer;
+    display: block;
+    font-size: 36px;
+    height: 52px;
+    padding: 10px 20px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    transition: transform 0.3s;
+    width: 52px;
+    z-index: 30;
+
+    @include desktop() {
+      display: none;
+    }
+  }
+
+
+  &__nav {
+    display: flex;
+    height: 90%;
+    opacity: 0.98;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+    
+    @include desktop() {
+      height: unset;
+      left: unset;
+      position: relative;
+      width: unset;
+    }
+
+    ul {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      list-style-type: none;
+      width: 100%;
+     
+      @include desktop() {
+        flex-direction: row;
+      }
+
+      li {
+        margin: 0 0 20px 0;
+        
+
+        @include desktop() {
+          margin: 0 25px 0 0;
+        }
+      }
+
+      a {
+        align-items: center;
+        color: $mainGrey;
+        display: flex;
+        font-size: 17px;
+        font-weight: 400;
+        
+        :hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
